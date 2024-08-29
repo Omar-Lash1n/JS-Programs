@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2</title>
+</head>
+<body>
+    <h2 style="text-align: center;">Temprature Converter</h2>
+    <hr>
+    <script>
+        var celisiusTemp = prompt("Enter Temprature in celisius (cel to fah convert):");
+        var celtofah = (9/5 * celisiusTemp)+32;
+        document.write(celisiusTemp+"°C is "+celtofah+"°F .<br><br>")
+
+        var fahTemp = prompt("Enter Temprature in faherenheit (fah to cel convert):")
+        var fahtocel = (fahTemp - 32) * 5/9;
+        document.write(fahTemp+"°F is "+fahtocel+"°C .<br>")
+    </script>
+</body>
+</html>

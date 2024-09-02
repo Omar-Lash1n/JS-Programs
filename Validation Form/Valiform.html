@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+    <link rel="stylesheet" href="/Validation Form/valiform.css">
+</head>
+<body>
+    
+    
+    <form id="userForm">
+        <input type="text" name="username" id="username" class="input-field" placeholder="Username">
+        <span id="usernameError" class="error-message">This input must be filled</span>
+
+        <input type="email" name="email" id="email" class="input-field" placeholder="Email">
+        <span id="emailError" class="error-message">This input must be filled</span>
+
+        <input type="password" name="password" id="password" class="input-field" placeholder="Password">
+        <span id="passwordError" class="error-message">This input must be filled</span>
+
+        <button type="button" id="validateButton" onclick="check()">Submit</button>
+
+        <script>
+             document.getElementById('validateButton').addEventListener('click', function() {
+            validateInput('username');
+            validateInput('email');
+            validateInput('password');
+        });
+
+        document.querySelectorAll('.input-field').forEach(input => {
+            input.addEventListener('focus', function() {
+                input.classList.remove('error');
+                document.getElementById(input.id + 'Error').classList.remove('visible');
+            });
+
+            input.addEventListener('blur', function() {
+                if (!input.value) {
+                    input.classList.add('error');
+                    document.getElementById(input.id + 'Error').classList.add('visible');
+                }
+            });
+        });
+
+        function validateInput(id) {
+            const input = document.getElementById(id);
+            if (!input.value) {
+                input.classList.add('error');
+                document.getElementById(id + 'Error').classList.add('visible');
+            }
+        }
+
+        function check(){
+           var inputs = document.querySelectorAll('input');
+           inputs.forEach(input => {
+                if (!input.value) {
+                    alert(`${input.name} is empty!`);
+                } else {
+                    alert(`${input.name} is filled with: ${input.value}`);
+                }
+            });
+        }
+        </script>
+    </form>
+
+    
+</body>
+</html>

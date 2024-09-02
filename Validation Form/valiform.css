@@ -1,0 +1,27 @@
+.input-field {
+    display: block;
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px;
+}
+
+.input-field:focus {
+    border-color: grey;
+}
+
+.input-field.error {
+    border-color: red;
+}
+
+.error-message {
+    color: red;
+    font-size: 12px;
+    display: none;
+    margin-top: 5px;
+}
+
+.error-message.visible {
+    display: block;
+}
